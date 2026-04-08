@@ -200,6 +200,15 @@ class ETL():
             city_url = city.url
             r = requests.get(city_url)
             # 1. Assignment 4 TODO: Check if the city has data available by checking for return code 404
+            # Make API request
+            response = requests.get(weather_api_url)
+
+            if response.status_code == 200:
+            data = response.json()
+            else:
+            print(f"City {city_name} data not found. Skipping.")
+            data = None  # optional, just to make sure no further processing happens
+
             city_data = r.text
             data_dir = os.getcwd() + "/data"
             os.system("mkdir -p " + data_dir)

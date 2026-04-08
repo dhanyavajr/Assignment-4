@@ -60,6 +60,7 @@ input.invalid {
             				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">  {{ name }}
               				<span class="caret"></span>
             				</button>
+						
             				<ul class="dropdown-menu text-center" aria-labelledby="dropdownMenu1">
             				  <li><a href="#" onclick="show_settings()">Settings</a></li>
              				  <li><hr class="dropdown-divider"></li>
@@ -134,10 +135,15 @@ input.invalid {
 				<td></td>
                 		<td>
                   		<!-- Assignment1 TODO: Complete the data fields -->
-                  		<input type="checkbox" name="max_temp" id="max_temp" value="max_temp">Max Temperature</input><br></br>
-				<input type="checkbox" name="min_temp" id="min_temp" value="min_temp">Min Temperature</input><br></br>
-				<input type="checkbox" name="precipitation" id="precipitation" value="precipitation">Precipitation</input><br></br>
-                  		<input type="checkbox" name="snow" id="snow" value="snow">Snow</input>
+                
+  						<input type="checkbox" name="max_temp" id="max_temp" value="max_temp">Max Temperature<br>
+ 						<input type="checkbox" name="min_temp" id="min_temp" value="min_temp">Min Temperature<br>
+  						<input type="checkbox" name="precipitation" id="precipitation" value="precipitation">Precipitation<br>
+  						<input type="checkbox" name="snow" id="snow" value="snow">Snow<br>
+  						<input type="checkbox" name="avg_temp" id="avg_temp" value="avg_temp">Average Temperature<br>
+ 					 	<input type="checkbox" name="wind_speed" id="wind_speed" value="wind_speed">Wind Speed<br>
+  						<input type="checkbox" name="humidity" id="humidity" value="humidity">Humidity<br>
+  						<input type="checkbox" name="cloud_cover" id="cloud_cover" value="cloud_cover">Cloud Cover<br>
                 		</td>
               	     </tr>
 
@@ -149,7 +155,7 @@ input.invalid {
 		</div>
 		</div>
 		
-		<div class="col-md-2 flex-grow-1 div_right" id="entity-form-container" style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
+		<div class="col-md-2 flex-grow-1 div_right" id="right-sidebar" style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
                         <div class="row"> <!-- row2 -->
 			<h3>Available cities:</h3>
 			<!-- Assignment 4 Add ordered list for cities -->

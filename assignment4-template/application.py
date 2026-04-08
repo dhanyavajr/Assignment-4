@@ -181,6 +181,23 @@ weather_parameters_to_track = ['TMAX','TMIN','PRCP','SNOW']
 
 Base.metadata.create_all(engine)
 
+@app.route("/welcome/<username>")
+def welcome(username):
+    dbsession = DBSession()
+    user = dbsession.query(User).filter_by(name=username).first()
+    if not user:
+        dbsession.close()
+        return render_template("not-found.html", username=username)
+
+    cities = dbsession.query(City).filter_by(adminId=user.id).all()
+    dbsession.close()
+
+    return render_template(
+        "welcome.html",
+        name=username,
+        welcome_message=f"Welcome, {username}!",
+        cities=cities  # pass list of city objects
+    )
 
 class ETL():
 
